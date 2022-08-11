@@ -1,19 +1,26 @@
 .courses
-    background-color: #DEE2E6
+    background-image: url("./assets/courses/courses_BG.png") 
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
     h3
         padding: 80px 0 60px 0
         text-align: center
-        font-size: 40px
+        font-weight: 500
+        font-size: 28px
     &_wrapper
         display: grid
         grid-template: auto / 1fr 1fr 1fr 
         row-gap: 20px
         margin: 0 auto
+        padding-bottom: 100px
     &_imgWrapper
         position: absolute
-        background-color: rgba(0, 0, 0, 0.7)
         width: 360px
         height: 360px
+        border-radius: 10px
+    &_img
+        border-radius: 10px
     &_item
         margin: 0 auto
         width: 360px
@@ -21,12 +28,6 @@
         &:hover
             .courses_imgWrapper
                 outline: 1px solid #FFEE32
-            .courses_item-btn
-                color: #FFEE32
-                border: 2px solid #FFEE32
-                &:hover
-                    background-color: #FFEE32
-                    color: #000000 
             h4
                 color: #FFEE32
         h4
@@ -34,7 +35,8 @@
             top: -250px
             text-align: center
             bottom: 40px
-            font-size: 25px
+            font-weight: 500
+            font-size: 22px
             color: #FFFFFF
             transition: 0.3s all
         &-btn 
@@ -42,22 +44,69 @@
             top: -210px
             width: inherit
             height: 50px
-            color: #FFFFFF
+            color: #FFEE32
+            font-weight: 400
+            font-size: 16px
             background-color: unset
-            font-size: 20px
-            border: 2px solid #FFFFFF
+            border: 2px solid #FFEE32
             transition: 0.3s all
     &_btnWrapper
         width: 200px
         margin: 0 auto
-    &_btn
-        width: 200px
-        height: 45px
-        margin: 40px auto 0 auto
-        padding-bottom: 80px
-        button
+    &_overlay
+        position: fixed
+        top: 0
+        bottom: 0
+        z-index: 8888
+        width: 100%
+        height: 100vh
+        background-image: url("./assets/courses/modal/courses_overlay.png") 
+        background-repeat: no-repeat
+        background-position: center
+        background-size: cover   
+    &_modal
+        padding: 40px
+        background: rgba(0, 0, 0, 0.65)
+        backdrop-filter: blur(20px)
+        width: calc(90% - 80px)
+        height: calc(90% - 260px)
+        margin: 140px auto 0 auto
+        &_title
+            text-align: center
+            color: #FFEE32
+            font-weight: 400
+            font-size: 32px
+            margin-bottom: 50px
+        &_descr
+            text-align: center
+            font-weight: 400
+            font-size: 18px
+            color: #FFFFFF
+            margin-bottom: 60px
+        &_ul
+            list-style-type: none
+            li
+                font-weight: 400
+                font-size: 18px
+                line-height: 22px
+                text-align: center
+                color: #FFFFFF
+                &::before
+                    color: #FFFFFF
+                    padding: 0 15px 0 0
+                    line-height: 22px
+                    content:"\2022"
+        &_btnWrapper
+            padding-top: 40px
+            width: 200px
+            height: 45px
+            margin: 0 auto
+        &_btn
             width: inherit
             height: inherit
-            color: #000000
-            border: 2px solid #000000
+            border: 2px solid #FFEE32
+            color: #FFEE32
             background-color: unset
+            transition: 0.3s all
+            &:hover
+                background-color: rgba(255, 238, 50, 0.3)
