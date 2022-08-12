@@ -16,14 +16,14 @@
     <title>ELIAS BARBER</title>
   </head>
   <body>
-    <header>
+    <header id="menu">
       <img src="/ELIAS%20logo.84db34ba.svg" alt="logo">
       <nav>
-        <a href="">О нас</a>
-        <a href="">Обучающие программы</a>
-        <a href="">Консультация</a>
+        <a href="#ourTeam">О нас</a>
+        <a href="#courses">Обучающие программы</a>
+        <a href="#contactUs">Контакты</a>
       </nav>
-      <button class="header_btn">Выбрать курс</button>
+      <a class="header_btn" href="#courses">Выбрать курс</a>
     </header>
     <section class="welcomeSection">
       <div class="container">
@@ -42,7 +42,7 @@
         </div>
       </div>
     </section>
-    <section class="ourTeam">
+    <section class="ourTeam" id="ourTeam">
       <div class="container">
         <h2>EDUCATORS</h2>
         <div class="ourTeam_wrapper">
@@ -79,7 +79,7 @@
                 мастер класса
               </h5>
               <div class="coursesDetail_btnWrapper">
-                <button class="coursesDetail_btn">Открыть</button>
+                <button class="coursesDetail_btn" id="openMasterBtn">Открыть</button>
               </div>
             </div>
           </div>
@@ -91,14 +91,14 @@
                 мастер класса
               </h5>
               <div class="coursesDetail_btnWrapper">
-                <button class="coursesDetail_btn">Открыть</button>
+                <button class="coursesDetail_btn" id="closeMasterBtn">Открыть</button>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="coursesDetail_overlay">
-        <div class="coursesDetail_modal" id="MasterOpen">
+      <div class="coursesDetail_overlay" id="MasterOpen">
+        <div class="coursesDetail_modal">
           <h5 class="coursesDetail_modal_title">ОТКРЫТЫЙ МАСТЕР-КЛАСС</h5>
           <div class="coursesDetail_modal_wrapper">
             <div class="coursesDetail_modal_item">
@@ -114,42 +114,52 @@
                 которые не зависят от меня,
                 <span>предоплата не возвращается</span>.
               </p>
-              <!-- <div class="coursesDetail_modal_raider"> -->
               <img class="coursesDetail_modal_moreIcon" src="/circle-add.d479ce21.svg" alt="moreIcon">
-              <button class="coursesDetail_modal_raiderBtn">
+              <button class="coursesDetail_modal_raiderBtn" id="openRaiderOpen">
                 Дополнительные требования (райдер)
               </button>
-              <!-- </div> -->
             </div>
           </div>
         </div>
-        <div class="coursesDetail_modal" id="MasterClose">
+        <div class="coursesDetail_modal_btnWrapper">
+          <button class="coursesDetail_modal_btn">Главная страница</button>
+        </div>
+      </div>
+      <div class="coursesDetail_overlay" id="MasterClose">
+        <div class="coursesDetail_modal">
           <h5 class="coursesDetail_modal_title">
             Распорядок закрытого мастер-класса
           </h5>
           <div class="coursesDetail_modal_secondWrapper">
             <div class="coursesDetail_modal_item">
-              <img class="coursesDetail_modal_content" src="/coursesDetail_modalUp.4d8772e3.svg" alt="detailsUp">
+              <img class="coursesDetail_modal_content" src="/1.aac87fd3.svg" alt="detailsUp">
             </div>
             <div class="coursesDetail_modal_item">
-              <img class="coursesDetail_modal_content" src="/coursesDetail_modalUp.4d8772e3.svg" alt="detailsUp">
+              <img class="coursesDetail_modal_content" src="/2.73ee16ae.svg" alt="detailsUp">
             </div>
             <div class="coursesDetail_modal_item">
-              <img class="coursesDetail_modal_content" src="/coursesDetail_modalUp.4d8772e3.svg" alt="detailsUp">
+              <img class="coursesDetail_modal_content" src="/3.5296f5d3.svg" alt="detailsUp">
             </div>
             <div class="coursesDetail_modal_item">
-              <img class="coursesDetail_modal_content" src="/coursesDetail_modalUp.4d8772e3.svg" alt="detailsUp">
+              <img class="coursesDetail_modal_content" src="/4.ae1e3664.svg" alt="detailsUp">
             </div>
             <div class="coursesDetail_modal_item">
-              <img class="coursesDetail_modal_content" src="/coursesDetail_modalUp.4d8772e3.svg" alt="detailsUp">
+              <img class="coursesDetail_modal_content" src="/5.6ceb3932.svg" alt="detailsUp">
             </div>
           </div>
-          <img class="coursesDetail_modal_moreIcon" src="/circle-add.d479ce21.svg" alt="moreIcon">
-          <button class="coursesDetail_modal_raiderBtn">
+          <div class="coursesDetail_modal_btnWrapper2">
+            <img class="coursesDetail_modal_moreIcon" src="/circle-add.d479ce21.svg" alt="moreIcon">
+          <button class="coursesDetail_modal_raiderBtn" id="openRaiderClose">
             Дополнительные требования (райдер)
           </button>
+          </div>
         </div>
-        <div class="coursesDetail_modal" id="Raider"> 
+        <div class="coursesDetail_modal_btnWrapper">
+          <button class="coursesDetail_modal_btn">Главная страница</button>
+        </div>
+      </div>
+      <div class="coursesDetail_overlay" id="openRaider">
+        <div class="coursesDetail_modal"> 
           <h5 class="coursesDetail_modal_title">
             ДОПОЛНИТЕЛЬНЫЕ ТРЕБОВАНИЯ (РАЙДЕР)
           </h5>
@@ -189,7 +199,7 @@
             </div>
           </div>
           <div class="coursesDetail_modal_raiderBackBtnWrapper">
-            <button class="coursesDetail_modal_raiderBackBtn">
+            <button class="coursesDetail_modal_raiderBackBtn" id="openRaiderBack">
               Вернуться назад
             </button>
           </div>
@@ -198,8 +208,59 @@
           <button class="coursesDetail_modal_btn">Главная страница</button>
         </div>
       </div>
+      <div class="coursesDetail_overlay" id="closeRaider">
+        <div class="coursesDetail_modal"> 
+          <h5 class="coursesDetail_modal_title">
+            ДОПОЛНИТЕЛЬНЫЕ ТРЕБОВАНИЯ (РАЙДЕР)
+          </h5>
+          <div class="coursesDetail_modal_wrapper">
+            <div class="coursesDetail_modal_item">
+              <p class="coursesDetail_modal_subtitle">
+                Помимо оплаты мастер класса, <br>
+                райдер включает в себя:
+              </p>
+              <img class="coursesDetail_modal_content" src="/RaiderInfo.5fb09c52.svg" alt="detailsDown">
+            </div>
+            <div class="coursesDetail_modal_item">
+              <p class="coursesDetail_modal_raiderDescr">
+                Выезд на мастер-класс предполагает предварительный отбор моделей
+                для демонстрации не позже трех дней до начала МК.
+              </p>
+              <p class="coursesDetail_modal_raiderDescr">
+                Для проведение МК обязательная установка телевизора или
+                проектора, звуковой системы, наличие НОМ!-выхода.
+              </p>
+              <p class="coursesDetail_modal_raiderDescr">
+                Зал должен быть хорошо освещенным и проветриваемым, в нем не
+                должно быть жарко.
+              </p>
+              <p class="coursesDetail_modal_raiderDescr">
+                Слушателям должно быть комфортно: удобные стулья, просторное
+                помещение, ручки и планшеты, возможность распечатать листы для
+                зарисовок.
+              </p>
+              <p class="coursesDetail_modal_raiderDescr">
+                Если на демонстрации присутствует более 40 человек, на МК.
+              </p>
+              <p class="coursesDetail_modal_raiderDescr">
+                Обязательно должны быть гарнитура и большой экран для проекции
+                моих действий.
+              </p>
+            </div>
+          </div>
+          <div class="coursesDetail_modal_raiderBackBtnWrapper">
+            <button class="coursesDetail_modal_raiderBackBtn" id="closeRaiderBack">
+              Вернуться назад
+            </button>
+          </div>
+        </div>
+        <div class="coursesDetail_modal_btnWrapper">
+          <button class="coursesDetail_modal_btn">Главная страница</button>
+        </div>
+      </div>       
+      
     </section>
-    <section class="courses">
+    <section class="courses" id="courses">
       <div class="container">
         <h3>ОБУЧАЮЩИЕ ПРОГРАММЫ</h3>
         <div class="courses_wrapper">
@@ -211,12 +272,50 @@
               <button class="courses_item-btn">Узнать детальней</button>
             </div>
           </div>
+          <div class="courses_overlay">
+            <div class="courses_modal">
+              <h5 class="courses_modal_title">
+                «DAY TO DAY AND NOT BURNTOUT»
+              </h5>
+              <p class="courses_modal_descr">Быстрые и Эффективные способы стрижки на потоке. <br>
+                Этот МК предназначен для того, что бы быстро и качественно подстричь клиента в не зависимости от длины волос и <br> сложности костной структуры головы.</p>
+                <ul class="courses_modal_ul">
+                  <li>Простые, быстрые и качественные фэйды на потоке.</li>
+                  <li>Быстрые способ стрижки на любую длину (короткую/среднюю/большую).</li>
+                  <li>Многие секреты стрижек на потоке, о которых вы не слышали.</li>
+                  <li>Консультация, подбор стрижки с помочью 3х вопросов.</li>
+                  <li>Как не уставать на потоке (эффективное распределение энергии).</li>
+                </ul>
+            </div>
+            <div class="courses_modal_btnWrapper">
+              <button class="courses_modal_btn">Главная страница</button>
+            </div>
+          </div>
           <div class="courses_item">
             <div class="courses_imgWrapper"></div>
             <img class="courses_img" src="/coursesItem_2.519f6b55.png" alt="courses_2">
             <h4>«FADE - is easy to make»</h4>
             <div class="courses_btnWrapper">
               <button class="courses_item-btn">Узнать детальней</button>
+            </div>
+          </div>
+          <div class="courses_overlay">
+            <div class="courses_modal">
+              <h5 class="courses_modal_title">
+                «FADE - is easy to make»
+              </h5>
+              <p class="courses_modal_descr">Быстрые и Эффективные способы стрижки на потоке. <br>
+                Этот МК предназначен для того, что бы быстро и качественно подстричь клиента в не зависимости от длины волос и <br> сложности костной структуры головы.</p>
+                <ul class="courses_modal_ul">
+                  <li>Простые, быстрые и качественные фэйды на потоке.</li>
+                  <li>Быстрые способ стрижки на любую длину (короткую/среднюю/большую).</li>
+                  <li>Многие секреты стрижек на потоке, о которых вы не слышали.</li>
+                  <li>Консультация, подбор стрижки с помочью 3х вопросов.</li>
+                  <li>Как не уставать на потоке (эффективное распределение энергии).</li>
+                </ul>
+            </div>
+            <div class="courses_modal_btnWrapper">
+              <button class="courses_modal_btn">Главная страница</button>
             </div>
           </div>
           <div class="courses_item">
@@ -227,12 +326,50 @@
               <button class="courses_item-btn">Узнать детальней</button>
             </div>
           </div>
+          <div class="courses_overlay">
+            <div class="courses_modal">
+              <h5 class="courses_modal_title">
+                «Fundament»
+              </h5>
+              <p class="courses_modal_descr">Быстрые и Эффективные способы стрижки на потоке. <br>
+                Этот МК предназначен для того, что бы быстро и качественно подстричь клиента в не зависимости от длины волос и <br> сложности костной структуры головы.</p>
+                <ul class="courses_modal_ul">
+                  <li>Простые, быстрые и качественные фэйды на потоке.</li>
+                  <li>Быстрые способ стрижки на любую длину (короткую/среднюю/большую).</li>
+                  <li>Многие секреты стрижек на потоке, о которых вы не слышали.</li>
+                  <li>Консультация, подбор стрижки с помочью 3х вопросов.</li>
+                  <li>Как не уставать на потоке (эффективное распределение энергии).</li>
+                </ul>
+            </div>
+            <div class="courses_modal_btnWrapper">
+              <button class="courses_modal_btn">Главная страница</button>
+            </div>
+          </div>
           <div class="courses_item">
             <div class="courses_imgWrapper"></div>
             <img class="courses_img" src="/coursesItem_2.519f6b55.png" alt="courses_4">
             <h4>«Creative course»</h4>
             <div class="courses_btnWrapper">
               <button class="courses_item-btn">Узнать детальней</button>
+            </div>
+          </div>
+          <div class="courses_overlay">
+            <div class="courses_modal">
+              <h5 class="courses_modal_title">
+                «Creative course»
+              </h5>
+              <p class="courses_modal_descr">Быстрые и Эффективные способы стрижки на потоке. <br>
+                Этот МК предназначен для того, что бы быстро и качественно подстричь клиента в не зависимости от длины волос и <br> сложности костной структуры головы.</p>
+                <ul class="courses_modal_ul">
+                  <li>Простые, быстрые и качественные фэйды на потоке.</li>
+                  <li>Быстрые способ стрижки на любую длину (короткую/среднюю/большую).</li>
+                  <li>Многие секреты стрижек на потоке, о которых вы не слышали.</li>
+                  <li>Консультация, подбор стрижки с помочью 3х вопросов.</li>
+                  <li>Как не уставать на потоке (эффективное распределение энергии).</li>
+                </ul>
+            </div>
+            <div class="courses_modal_btnWrapper">
+              <button class="courses_modal_btn">Главная страница</button>
             </div>
           </div>
           <div class="courses_item">
@@ -243,6 +380,25 @@
               <button class="courses_item-btn">Узнать детальней</button>
             </div>
           </div>
+          <div class="courses_overlay">
+            <div class="courses_modal">
+              <h5 class="courses_modal_title">
+                «Mens Color»
+              </h5>
+              <p class="courses_modal_descr">Быстрые и Эффективные способы стрижки на потоке. <br>
+                Этот МК предназначен для того, что бы быстро и качественно подстричь клиента в не зависимости от длины волос и <br> сложности костной структуры головы.</p>
+                <ul class="courses_modal_ul">
+                  <li>Простые, быстрые и качественные фэйды на потоке.</li>
+                  <li>Быстрые способ стрижки на любую длину (короткую/среднюю/большую).</li>
+                  <li>Многие секреты стрижек на потоке, о которых вы не слышали.</li>
+                  <li>Консультация, подбор стрижки с помочью 3х вопросов.</li>
+                  <li>Как не уставать на потоке (эффективное распределение энергии).</li>
+                </ul>
+            </div>
+            <div class="courses_modal_btnWrapper">
+              <button class="courses_modal_btn">Главная страница</button>
+            </div>
+          </div>
           <div class="courses_item">
             <div class="courses_imgWrapper"></div>
             <img class="courses_img" src="/coursesItem_2.519f6b55.png" alt="courses_6">
@@ -251,30 +407,30 @@
               <button class="courses_item-btn">Узнать детальней</button>
             </div>
           </div>
+          <div class="courses_overlay">
+            <div class="courses_modal">
+              <h5 class="courses_modal_title">
+                «Your Business»
+              </h5>
+              <p class="courses_modal_descr">Быстрые и Эффективные способы стрижки на потоке. <br>
+                Этот МК предназначен для того, что бы быстро и качественно подстричь клиента в не зависимости от длины волос и <br> сложности костной структуры головы.</p>
+                <ul class="courses_modal_ul">
+                  <li>Простые, быстрые и качественные фэйды на потоке.</li>
+                  <li>Быстрые способ стрижки на любую длину (короткую/среднюю/большую).</li>
+                  <li>Многие секреты стрижек на потоке, о которых вы не слышали.</li>
+                  <li>Консультация, подбор стрижки с помочью 3х вопросов.</li>
+                  <li>Как не уставать на потоке (эффективное распределение энергии).</li>
+                </ul>
+            </div>
+            <div class="courses_modal_btnWrapper">
+              <button class="courses_modal_btn">Главная страница</button>
+            </div>
+          </div>
         </div>
         </div> 
       
-      <div class="courses_overlay">
-        <div class="courses_modal">
-          <h5 class="courses_modal_title">
-            «DAY TO DAY AND NOT BURNTOUT»
-          </h5>
-          <p class="courses_modal_descr">Быстрые и Эффективные способы стрижки на потоке. <br>
-            Этот МК предназначен для того, что бы быстро и качественно подстричь клиента в не зависимости от длины волос и <br> сложности костной структуры головы.</p>
-            <ul class="courses_modal_ul">
-              <li>Простые, быстрые и качественные фэйды на потоке.</li>
-              <li>Быстрые способ стрижки на любую длину (короткую/среднюю/большую).</li>
-              <li>Многие секреты стрижек на потоке, о которых вы не слышали.</li>
-              <li>Консультация, подбор стрижки с помочью 3х вопросов.</li>
-              <li>Как не уставать на потоке (эффективное распределение энергии).</li>
-            </ul>
-        </div>
-        <div class="courses_modal_btnWrapper">
-          <button class="courses_modal_btn">Главная страница</button>
-        </div>
-        </div>
     </section>
-    <section class="contactUs">
+    <section class="contactUs" id="contactUs">
       <div class="container">
         <div class="contactUs_wrapper">
           <div class="contactUs_formSquare">

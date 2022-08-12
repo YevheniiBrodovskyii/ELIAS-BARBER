@@ -4,12 +4,25 @@ body
   margin: 0
   padding: 0
 
+*, a:focus 
+  outline: none 
+
 .container
   width: 1600px
   margin: 0 auto
 
 
+@keyframes showBlock 
+    0% 
+        opacity: 0
+        visibility: hidden
+    100% 
+        opacity: 1
+        visibility: visible
 
+.b-show 
+    display: block
+    animation: showBlock 0.2s linear forwards
 
 
 

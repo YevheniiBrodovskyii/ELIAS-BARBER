@@ -1,27 +1,34 @@
 import $ from 'jquery';
+import { animatedScroll } from './js/animatedScroll';
+import { aboutCourseOpen, aboutCourseClose } from './js/courses';
+import {
+  aboutOpenMaster,
+  aboutCloseMaster,
+  aboutOpenRaider,
+  aboutCloseRaider,
+  aboutOpenRaiderBack,
+  aboutCloseRaiderBack,
+  Back,
+} from './js/coursesDetail';
 
 $(function () {
-  let ourTeam_imgWrapper = document.querySelectorAll('.ourTeam_imgWrapper'),
-    ourTeam_btn = document.querySelector('.ourTeam_btn');
+  let closeMasterDetails = document.querySelectorAll(
+    '.coursesDetail_modal_btn'
+  );
 
-  // function showButton(item) {
-  //   $(item).each(function (i) {
-  //     $(this).on('mouseenter', function (e) {
-  //       e.preventDefault();
-  //       $(ourTeam_btn).eq(i).css('visibility', 'visible');
-  //     });
-  //     $(this).on('mouseleave', function (e) {
-  //       e.preventDefault();
-  //       $(ourTeam_btn).eq(i).css('visibility', 'hidden');
-  //     });
-  //   });
-  // }
+  // ANIMATED SCROLL
+  animatedScroll();
 
-  // showButton('.ourTeam_imgWrapper');
-  // showButton('.ourTeam_btn');
-  // showButton('.ourTeam_btn-Wrapper');
+  // OPEN MASTER DESCRIPTION
+  aboutOpenMaster('#openMasterBtn');
+  aboutCloseMaster('#closeMasterBtn');
+  aboutOpenRaider('#openRaiderOpen');
+  aboutCloseRaider('#openRaiderClose');
+  aboutOpenRaiderBack('#openRaiderBack');
+  aboutCloseRaiderBack('#closeRaiderBack');
+  Back(closeMasterDetails);
 
-  ourTeam_btn.addEventListener('click', () => {
-    console.log('123');
-  });
+  // SHOW COURSE DESCRIPTION
+  aboutCourseOpen('.courses_item-btn');
+  aboutCourseClose('.courses_modal_btn');
 });

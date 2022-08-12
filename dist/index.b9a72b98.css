@@ -4,9 +4,30 @@
   font-family: Inter, sans-serif;
 }
 
+*, a:focus {
+  outline: none;
+}
+
 .container {
   width: 1600px;
   margin: 0 auto;
+}
+
+@keyframes showBlock {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.b-show {
+  animation: showBlock .2s linear forwards;
+  display: block;
 }
 
 header {
@@ -23,11 +44,14 @@ header {
 
 .header_btn {
   width: 200px;
+  text-align: center;
   background-color: unset;
   color: #ffee32;
   border: 2px solid #ffee32;
   font-size: 16px;
   font-weight: 400;
+  line-height: 45px;
+  text-decoration: none;
   transition: all .3s;
 }
 
@@ -266,6 +290,10 @@ nav a {
   bottom: 0;
 }
 
+.coursesDetail_overlay_show {
+  display: block;
+}
+
 .coursesDetail_modal {
   backdrop-filter: blur(20px);
   width: calc(90% - 80px);
@@ -289,6 +317,11 @@ nav a {
   padding-top: 40px;
 }
 
+.coursesDetail_modal_btnWrapper2 {
+  width: 451px;
+  margin: 150px auto 0;
+}
+
 .coursesDetail_modal_btn {
   width: inherit;
   height: inherit;
@@ -309,8 +342,9 @@ nav a {
 }
 
 .coursesDetail_modal_secondWrapper {
-  grid-template: auto / 1fr 1fr 1fr 1fr 1fr;
-  display: grid;
+  justify-content: center;
+  margin-top: 100px;
+  display: flex;
 }
 
 .coursesDetail_modal_content {
@@ -390,10 +424,6 @@ nav a {
   background-color: #ffee324d;
 }
 
-#MasterOpen, #MasterClose, #Raider {
-  display: none;
-}
-
 .courses {
   background-image: url("courses_BG.de56a939.png");
   background-position: center;
@@ -465,6 +495,10 @@ nav a {
   top: -210px;
 }
 
+.courses_item-btn:hover {
+  background-color: #ffee324d;
+}
+
 .courses_btnWrapper {
   width: 200px;
   margin: 0 auto;
@@ -478,9 +512,14 @@ nav a {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  display: none;
   position: fixed;
   top: 0;
-  bottom: 0;
+  left: 0;
+}
+
+.courses_overlay_show {
+  display: block;
 }
 
 .courses_modal {
@@ -597,10 +636,6 @@ nav a {
   border: none;
   border-bottom: 1px solid #fff;
   margin: 0 auto;
-}
-
-.contactUs_formSquare form input:focus {
-  border: none !important;
 }
 
 .contactUs_btnWrapper {

@@ -535,29 +535,27 @@ function hmrAcceptRun(bundle, id) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _jquery = require("jquery");
 var _jqueryDefault = parcelHelpers.interopDefault(_jquery);
+var _animatedScroll = require("./js/animatedScroll");
+var _courses = require("./js/courses");
+var _coursesDetail = require("./js/coursesDetail");
 (0, _jqueryDefault.default)(function() {
-    let ourTeam_imgWrapper = document.querySelectorAll(".ourTeam_imgWrapper"), ourTeam_btn = document.querySelector(".ourTeam_btn");
-    // function showButton(item) {
-    //   $(item).each(function (i) {
-    //     $(this).on('mouseenter', function (e) {
-    //       e.preventDefault();
-    //       $(ourTeam_btn).eq(i).css('visibility', 'visible');
-    //     });
-    //     $(this).on('mouseleave', function (e) {
-    //       e.preventDefault();
-    //       $(ourTeam_btn).eq(i).css('visibility', 'hidden');
-    //     });
-    //   });
-    // }
-    // showButton('.ourTeam_imgWrapper');
-    // showButton('.ourTeam_btn');
-    // showButton('.ourTeam_btn-Wrapper');
-    ourTeam_btn.addEventListener("click", ()=>{
-        console.log("123");
-    });
+    let closeMasterDetails = document.querySelectorAll(".coursesDetail_modal_btn");
+    // ANIMATED SCROLL
+    (0, _animatedScroll.animatedScroll)();
+    // OPEN MASTER DESCRIPTION
+    (0, _coursesDetail.aboutOpenMaster)("#openMasterBtn");
+    (0, _coursesDetail.aboutCloseMaster)("#closeMasterBtn");
+    (0, _coursesDetail.aboutOpenRaider)("#openRaiderOpen");
+    (0, _coursesDetail.aboutCloseRaider)("#openRaiderClose");
+    (0, _coursesDetail.aboutOpenRaiderBack)("#openRaiderBack");
+    (0, _coursesDetail.aboutCloseRaiderBack)("#closeRaiderBack");
+    (0, _coursesDetail.Back)(closeMasterDetails);
+    // SHOW COURSE DESCRIPTION
+    (0, _courses.aboutCourseOpen)(".courses_item-btn");
+    (0, _courses.aboutCourseClose)(".courses_modal_btn");
 });
 
-},{"jquery":"hgMhh","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hgMhh":[function(require,module,exports) {
+},{"jquery":"hgMhh","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./js/courses":"bwvJq","./js/coursesDetail":"6BaLY","./js/animatedScroll":"7VCZW"}],"hgMhh":[function(require,module,exports) {
 /*!
  * jQuery JavaScript Library v3.6.0
  * https://jquery.com/
@@ -7326,6 +7324,142 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}]},["awEvQ","bB7Pu"], "bB7Pu", "parcelRequire6348")
+},{}],"bwvJq":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "aboutCourseOpen", ()=>aboutCourseOpen);
+parcelHelpers.export(exports, "aboutCourseClose", ()=>aboutCourseClose);
+var _jquery = require("jquery");
+var _jqueryDefault = parcelHelpers.interopDefault(_jquery);
+function aboutCourseOpen(item) {
+    (0, _jqueryDefault.default)(item).each(function(i) {
+        (0, _jqueryDefault.default)(this).on("click", function(e) {
+            e.preventDefault();
+            (0, _jqueryDefault.default)(".courses_overlay").eq(i).toggleClass("courses_overlay_show");
+            (0, _jqueryDefault.default)(".courses_overlay").eq(i).toggleClass("b-show");
+        });
+    });
+}
+function aboutCourseClose(item) {
+    (0, _jqueryDefault.default)(item).each(function(i) {
+        (0, _jqueryDefault.default)(this).on("click", function(e) {
+            e.preventDefault();
+            (0, _jqueryDefault.default)(".courses_overlay").eq(i).removeClass("courses_overlay_show");
+            (0, _jqueryDefault.default)(".courses_overlay").eq(i).removeClass("b-show");
+        });
+    });
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","jquery":"hgMhh"}],"6BaLY":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "aboutOpenMaster", ()=>aboutOpenMaster);
+parcelHelpers.export(exports, "aboutCloseMaster", ()=>aboutCloseMaster);
+parcelHelpers.export(exports, "aboutOpenRaider", ()=>aboutOpenRaider);
+parcelHelpers.export(exports, "aboutCloseRaider", ()=>aboutCloseRaider);
+parcelHelpers.export(exports, "aboutOpenRaiderBack", ()=>aboutOpenRaiderBack);
+parcelHelpers.export(exports, "aboutCloseRaiderBack", ()=>aboutCloseRaiderBack);
+parcelHelpers.export(exports, "Back", ()=>Back);
+var _jquery = require("jquery");
+var _jqueryDefault = parcelHelpers.interopDefault(_jquery);
+function aboutOpenMaster(item) {
+    (0, _jqueryDefault.default)(item).each(function(i) {
+        (0, _jqueryDefault.default)(this).on("click", function(e) {
+            e.preventDefault();
+            (0, _jqueryDefault.default)("#MasterOpen").toggleClass("coursesDetail_overlay_show");
+            (0, _jqueryDefault.default)("#MasterOpen").toggleClass("b-show");
+        });
+    });
+}
+function aboutCloseMaster(item) {
+    (0, _jqueryDefault.default)(item).each(function(i) {
+        (0, _jqueryDefault.default)(this).on("click", function(e) {
+            e.preventDefault();
+            (0, _jqueryDefault.default)("#MasterClose").toggleClass("coursesDetail_overlay_show");
+            (0, _jqueryDefault.default)("#MasterClose").toggleClass("b-show");
+        });
+    });
+}
+function aboutOpenRaider(item) {
+    (0, _jqueryDefault.default)(item).each(function(i) {
+        (0, _jqueryDefault.default)(this).on("click", function(e) {
+            e.preventDefault();
+            (0, _jqueryDefault.default)("#openRaider").toggleClass("coursesDetail_overlay_show");
+            (0, _jqueryDefault.default)("#openRaider").toggleClass("b-show");
+            (0, _jqueryDefault.default)("#MasterOpen").removeClass("coursesDetail_overlay_show");
+            (0, _jqueryDefault.default)("#MasterOpen").removeClass("b-show");
+            (0, _jqueryDefault.default)("#MasterClose").removeClass("coursesDetail_overlay_show");
+            (0, _jqueryDefault.default)("#MasterClose").removeClass("b-show");
+        });
+    });
+}
+function aboutCloseRaider(item) {
+    (0, _jqueryDefault.default)(item).each(function(i) {
+        (0, _jqueryDefault.default)(this).on("click", function(e) {
+            e.preventDefault();
+            (0, _jqueryDefault.default)("#closeRaider").toggleClass("coursesDetail_overlay_show");
+            (0, _jqueryDefault.default)("#closeRaider").toggleClass("b-show");
+            (0, _jqueryDefault.default)("#MasterOpen").removeClass("coursesDetail_overlay_show");
+            (0, _jqueryDefault.default)("#MasterOpen").removeClass("b-show");
+            (0, _jqueryDefault.default)("#MasterClose").removeClass("coursesDetail_overlay_show");
+            (0, _jqueryDefault.default)("#MasterClose").removeClass("b-show");
+        });
+    });
+}
+function aboutOpenRaiderBack(item) {
+    (0, _jqueryDefault.default)(item).each(function(i) {
+        (0, _jqueryDefault.default)(this).on("click", function(e) {
+            e.preventDefault();
+            (0, _jqueryDefault.default)("#openRaider").removeClass("coursesDetail_overlay_show");
+            (0, _jqueryDefault.default)("#openRaider").removeClass("b-show");
+            (0, _jqueryDefault.default)("#MasterOpen").toggleClass("coursesDetail_overlay_show");
+            (0, _jqueryDefault.default)("#MasterOpen").toggleClass("b-show");
+        });
+    });
+}
+function aboutCloseRaiderBack(item) {
+    (0, _jqueryDefault.default)(item).each(function(i) {
+        (0, _jqueryDefault.default)(this).on("click", function(e) {
+            e.preventDefault();
+            (0, _jqueryDefault.default)("#closeRaider").removeClass("coursesDetail_overlay_show");
+            (0, _jqueryDefault.default)("#closeRaider").removeClass("b-show");
+            (0, _jqueryDefault.default)("#MasterClose").toggleClass("coursesDetail_overlay_show");
+            (0, _jqueryDefault.default)("#MasterClose").toggleClass("b-show");
+        });
+    });
+}
+function Back(item) {
+    (0, _jqueryDefault.default)(item).each(function(i) {
+        (0, _jqueryDefault.default)(this).on("click", function(e) {
+            e.preventDefault();
+            (0, _jqueryDefault.default)("#MasterOpen").removeClass("coursesDetail_overlay_show");
+            (0, _jqueryDefault.default)("#MasterOpen").removeClass("b-show");
+            (0, _jqueryDefault.default)("#MasterClose").removeClass("coursesDetail_overlay_show");
+            (0, _jqueryDefault.default)("#MasterClose").removeClass("b-show");
+            (0, _jqueryDefault.default)("#openRaider").removeClass("coursesDetail_overlay_show");
+            (0, _jqueryDefault.default)("#openRaider").removeClass("b-show");
+            (0, _jqueryDefault.default)("#closeRaider").removeClass("coursesDetail_overlay_show");
+            (0, _jqueryDefault.default)("#closeRaider").removeClass("b-show");
+        });
+    });
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","jquery":"hgMhh"}],"7VCZW":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "animatedScroll", ()=>animatedScroll);
+var _jquery = require("jquery");
+var _jqueryDefault = parcelHelpers.interopDefault(_jquery);
+function animatedScroll() {
+    (0, _jqueryDefault.default)("#menu").on("click", "a", function(event) {
+        event.preventDefault();
+        const id = (0, _jqueryDefault.default)(this).attr("href"), top = (0, _jqueryDefault.default)(id).offset().top;
+        (0, _jqueryDefault.default)("body,html").animate({
+            scrollTop: top
+        }, 500);
+    });
+}
+
+},{"jquery":"hgMhh","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["awEvQ","bB7Pu"], "bB7Pu", "parcelRequire6348")
 
 //# sourceMappingURL=index.3d214d75.js.map
