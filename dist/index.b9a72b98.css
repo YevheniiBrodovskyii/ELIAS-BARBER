@@ -159,33 +159,21 @@ nav a {
   height: 360px;
   backdrop-filter: blur(12px);
   outline-offset: -10px;
-  background: #000000a6;
+  background-color: #000000a6;
   border-radius: 15px;
   outline: 1px solid #fff;
   margin: 0 auto;
+  transition: all .3s;
   box-shadow: 0 4px 6px #0000001a;
 }
 
-.ourTeam_btn {
-  width: inherit;
-  height: inherit;
-  background-color: unset;
+.ourTeam_item:hover {
+  background: linear-gradient(0deg, #ffee3233, #ffee3233), #000000a6;
+  outline: 1px solid #ffee32;
+}
+
+.ourTeam_item:hover .ourTeam_name {
   color: #ffee32;
-  border: 2px solid #ffee32;
-  transition: all .3s;
-  display: none;
-}
-
-.ourTeam_btn:hover .ourTeam_imgWrapper {
-  backdrop-filter: blur(20px);
-}
-
-.ourTeam_btn-Wrapper {
-  width: 200px;
-  height: 45px;
-  margin: 0 auto;
-  position: relative;
-  bottom: 220px;
 }
 
 .ourTeam_name {
@@ -212,6 +200,105 @@ nav a {
   height: 220px;
   border-radius: 100%;
   outline: 3px solid #ffee32;
+}
+
+.ourTeam_overlay {
+  z-index: 8888;
+  width: 100%;
+  height: 100vh;
+  background-image: url("courses_overlay.ea869035.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.ourTeam_overlay_show {
+  display: block;
+}
+
+.ourTeam_modal {
+  backdrop-filter: blur(20px);
+  width: calc(90% - 80px);
+  height: calc(90% - 260px);
+  background: #000000a6;
+  margin: 140px auto 0;
+  padding: 40px;
+}
+
+.ourTeam_modal_title {
+  text-align: center;
+  color: #fff;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.ourTeam_modal_title span {
+  color: #ffee32;
+  margin-left: 10px;
+}
+
+.ourTeam_modal_wrapper {
+  grid-template: auto / 30% 50%;
+  column-gap: 20%;
+  margin-top: 100px;
+  display: grid;
+}
+
+.ourTeam_modal_photoWrapper {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.ourTeam_modal_photo {
+  outline-offset: 10px;
+  outline: 6px solid #ffee3280;
+}
+
+.ourTeam_modal_icon {
+  float: left;
+  width: 50px;
+}
+
+.ourTeam_modal_instagram {
+  color: #ffee32;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 50px;
+}
+
+.ourTeam_modal_btnWrapper {
+  width: 200px;
+  height: 45px;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
+.ourTeam_modal_descr {
+  color: #fff;
+  padding: 0 55px 50px 0;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.ourTeam_modal_descr span {
+  color: #ffee32;
+}
+
+.ourTeam_modal_btn {
+  width: inherit;
+  height: inherit;
+  color: #ffee32;
+  background-color: unset;
+  border: 2px solid #ffee32;
+  transition: all .3s;
+}
+
+.ourTeam_modal_btn:hover {
+  background-color: #ffee324d;
 }
 
 .coursesDetail {
@@ -619,16 +706,7 @@ nav a {
   display: grid;
 }
 
-.contactUs_formSquare form p {
-  width: calc(100% - 80px);
-  color: #fff;
-  height: 20px;
-  margin: 0 auto;
-  font-size: 16px;
-  font-weight: 400;
-}
-
-.contactUs_formSquare form input {
+.contactUs_formSquare input {
   width: calc(100% - 80px);
   background-color: unset;
   color: #fff;
@@ -636,6 +714,15 @@ nav a {
   border: none;
   border-bottom: 1px solid #fff;
   margin: 0 auto;
+}
+
+.contactUs_label {
+  width: calc(100% - 80px);
+  color: #fff;
+  height: 20px;
+  margin: 0 auto;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .contactUs_btnWrapper {
@@ -658,6 +745,15 @@ nav a {
 .contactUs_btnWrapper button:hover {
   background-color: #ffee324d;
   border: 2px solid #ffee32;
+}
+
+.contactUs_privacy {
+  color: #ffee32;
+  text-align: center;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: underline;
 }
 
 .contactUs_contentUp hr {
@@ -728,6 +824,87 @@ nav a {
 
 .contactUs_contentDown_item:hover path {
   fill: #ff0;
+}
+
+.contactUs_overlay {
+  z-index: 8888;
+  width: 100%;
+  height: 100vh;
+  background-image: url("contactUs_overlay.f6ad3d4e.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.contactUs_overlay_show {
+  display: block;
+}
+
+.contactUs_modal {
+  backdrop-filter: blur(20px);
+  width: calc(90% - 200px);
+  height: calc(90% - 260px);
+  background: #000000a6;
+  margin: 140px auto 0;
+  padding: 100px;
+  overflow-y: scroll;
+}
+
+.contactUs_modal_title {
+  text-align: center;
+  color: #ffee32;
+  margin-bottom: 50px;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.contactUs_modal_ol {
+  color: #fff;
+  margin: 0 0 50px 30px;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.contactUs_modal_subtitle {
+  color: #ffee32;
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.contactUs_modal img {
+  float: left;
+  margin-right: 5px;
+}
+
+.contactUs_modal p {
+  color: #fff;
+  margin: 10px 0;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.contactUs_modal_btnWrapper {
+  width: 200px;
+  height: 45px;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
+.contactUs_modal_btn {
+  width: inherit;
+  height: inherit;
+  color: #ffee32;
+  background-color: unset;
+  border: 2px solid #ffee32;
+  transition: all .3s;
+}
+
+.contactUs_modal_btn:hover {
+  background-color: #ffee324d;
 }
 
 footer {

@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import { animatedScroll } from './js/animatedScroll';
+import { aboutBarberOpen, aboutBarberClose } from './js/ourTeam';
 import { aboutCourseOpen, aboutCourseClose } from './js/courses';
 import {
   aboutOpenMaster,
@@ -10,6 +11,7 @@ import {
   aboutCloseRaiderBack,
   Back,
 } from './js/coursesDetail';
+import { privacyOpen, privacyClose } from './js/contactUs';
 
 $(function () {
   let closeMasterDetails = document.querySelectorAll(
@@ -18,6 +20,10 @@ $(function () {
 
   // ANIMATED SCROLL
   animatedScroll();
+
+  // OPEN BARBER INFO
+  aboutBarberOpen('.ourTeam_item');
+  aboutBarberClose('.ourTeam_modal_btn');
 
   // OPEN MASTER DESCRIPTION
   aboutOpenMaster('#openMasterBtn');
@@ -31,4 +37,8 @@ $(function () {
   // SHOW COURSE DESCRIPTION
   aboutCourseOpen('.courses_item-btn');
   aboutCourseClose('.courses_modal_btn');
+
+  //OPEN PRIVACY MODAL
+  privacyOpen('.contactUs_privacy');
+  privacyClose('.contactUs_modal_btn');
 });

@@ -536,12 +536,17 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _jquery = require("jquery");
 var _jqueryDefault = parcelHelpers.interopDefault(_jquery);
 var _animatedScroll = require("./js/animatedScroll");
+var _ourTeam = require("./js/ourTeam");
 var _courses = require("./js/courses");
 var _coursesDetail = require("./js/coursesDetail");
+var _contactUs = require("./js/contactUs");
 (0, _jqueryDefault.default)(function() {
     let closeMasterDetails = document.querySelectorAll(".coursesDetail_modal_btn");
     // ANIMATED SCROLL
     (0, _animatedScroll.animatedScroll)();
+    // OPEN BARBER INFO
+    (0, _ourTeam.aboutBarberOpen)(".ourTeam_item");
+    (0, _ourTeam.aboutBarberClose)(".ourTeam_modal_btn");
     // OPEN MASTER DESCRIPTION
     (0, _coursesDetail.aboutOpenMaster)("#openMasterBtn");
     (0, _coursesDetail.aboutCloseMaster)("#closeMasterBtn");
@@ -553,9 +558,12 @@ var _coursesDetail = require("./js/coursesDetail");
     // SHOW COURSE DESCRIPTION
     (0, _courses.aboutCourseOpen)(".courses_item-btn");
     (0, _courses.aboutCourseClose)(".courses_modal_btn");
+    //OPEN PRIVACY MODAL
+    (0, _contactUs.privacyOpen)(".contactUs_privacy");
+    (0, _contactUs.privacyClose)(".contactUs_modal_btn");
 });
 
-},{"jquery":"hgMhh","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./js/courses":"bwvJq","./js/coursesDetail":"6BaLY","./js/animatedScroll":"7VCZW"}],"hgMhh":[function(require,module,exports) {
+},{"jquery":"hgMhh","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./js/courses":"bwvJq","./js/coursesDetail":"6BaLY","./js/animatedScroll":"7VCZW","./js/contactUs":"40LK6","./js/ourTeam":"gKa6P"}],"hgMhh":[function(require,module,exports) {
 /*!
  * jQuery JavaScript Library v3.6.0
  * https://jquery.com/
@@ -7457,6 +7465,58 @@ function animatedScroll() {
         (0, _jqueryDefault.default)("body,html").animate({
             scrollTop: top
         }, 500);
+    });
+}
+
+},{"jquery":"hgMhh","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"40LK6":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "privacyOpen", ()=>privacyOpen);
+parcelHelpers.export(exports, "privacyClose", ()=>privacyClose);
+var _jquery = require("jquery");
+var _jqueryDefault = parcelHelpers.interopDefault(_jquery);
+function privacyOpen(item) {
+    (0, _jqueryDefault.default)(item).each(function(i) {
+        (0, _jqueryDefault.default)(this).on("click", function(e) {
+            e.preventDefault();
+            (0, _jqueryDefault.default)(".contactUs_overlay").toggleClass("contactUs_overlay_show");
+            (0, _jqueryDefault.default)(".contactUs_overlay").toggleClass("b-show");
+        });
+    });
+}
+function privacyClose(item) {
+    (0, _jqueryDefault.default)(item).each(function(i) {
+        (0, _jqueryDefault.default)(this).on("click", function(e) {
+            e.preventDefault();
+            (0, _jqueryDefault.default)(".contactUs_overlay").removeClass("contactUs_overlay_show");
+            (0, _jqueryDefault.default)(".contactUs_overlay").removeClass("b-show");
+        });
+    });
+}
+
+},{"jquery":"hgMhh","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gKa6P":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "aboutBarberOpen", ()=>aboutBarberOpen);
+parcelHelpers.export(exports, "aboutBarberClose", ()=>aboutBarberClose);
+var _jquery = require("jquery");
+var _jqueryDefault = parcelHelpers.interopDefault(_jquery);
+function aboutBarberOpen(item) {
+    (0, _jqueryDefault.default)(item).each(function(i) {
+        (0, _jqueryDefault.default)(this).on("click", function(e) {
+            e.preventDefault();
+            (0, _jqueryDefault.default)(".ourTeam_overlay").eq(i).toggleClass("ourTeam_overlay_show");
+            (0, _jqueryDefault.default)(".ourTeam_overlay").eq(i).toggleClass("b-show");
+        });
+    });
+}
+function aboutBarberClose(item) {
+    (0, _jqueryDefault.default)(item).each(function(i) {
+        (0, _jqueryDefault.default)(this).on("click", function(e) {
+            e.preventDefault();
+            (0, _jqueryDefault.default)(".ourTeam_overlay").eq(i).removeClass("ourTeam_overlay_show");
+            (0, _jqueryDefault.default)(".ourTeam_overlay").eq(i).removeClass("b-show");
+        });
     });
 }
 
