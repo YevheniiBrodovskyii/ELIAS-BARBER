@@ -2,9 +2,11 @@
   "name": "elias_barber",
   "version": "1.0.0",
   "description": "Elias LP",
-  "main": "index.js",
+  "source": "src/index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "parcel ./src/index.html"
   },
   "author": "Yevhenii Brodovskyi",
   "license": "ISC",
