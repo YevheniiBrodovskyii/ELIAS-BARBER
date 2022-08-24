@@ -988,9 +988,13 @@ nav a {
     margin: 50px auto 0;
   }
 
+  .coursesDetail_modal_moreIcon {
+    width: 20px;
+  }
+
   .coursesDetail_modal_raiderBtn {
     margin: 80px 0 0;
-    font-size: 18px;
+    font-size: 15px;
   }
 
   .coursesDetail_modal_raiderDescr {
@@ -1079,11 +1083,11 @@ nav a {
   }
 
   .coursesDetail_modal_moreIcon {
-    width: 25px;
+    width: 20px;
   }
 
   .coursesDetail_modal_raiderBtn {
-    font-size: 18px;
+    font-size: 15px;
     line-height: 25px;
   }
 
@@ -1165,7 +1169,7 @@ nav a {
   }
 
   .coursesDetail_modal_moreIcon {
-    width: 25px;
+    width: 20px;
   }
 
   .coursesDetail_modal_btnWrapper2 {
@@ -1174,7 +1178,7 @@ nav a {
   }
 
   .coursesDetail_modal_raiderBtn {
-    font-size: 18px;
+    font-size: 15px;
     line-height: 25px;
   }
 
