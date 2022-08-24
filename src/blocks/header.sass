@@ -27,8 +27,52 @@ nav
     justify-content: space-around
     a
         margin: 0 30px
-        line-height: 40px
+        line-height: 49px
         font-size: 16px
         font-weight: 400
         color: #FFFFFF
         text-decoration: none
+
+@media ( min-width:1025px) and ( max-width:1400px)
+
+    header
+        width: calc(100% - 30px)
+        padding: 20px 15px
+        nav
+            a
+                font-size: 14px
+
+
+@media ( min-width:769px) and ( max-width:1024px)
+
+    header
+        width: calc(100% - 30px)
+        padding: 20px 15px
+        nav
+            display: none
+
+
+@media ( min-width:481px) and ( max-width:768px)
+
+    header
+        width: calc(100% - 30px)
+        padding: 20px 15px
+        nav
+            display: none
+    .header_btn
+        display: none
+
+
+@media ( min-width:320px) and ( max-width:480px)
+
+    header
+        width: calc(100% - 30px)
+        padding: 20px 15px
+        nav
+            display: none
+        img
+            width: 60%
+    .header_btn
+        display: none
+        
+        

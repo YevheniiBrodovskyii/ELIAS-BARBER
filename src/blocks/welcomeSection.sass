@@ -7,10 +7,10 @@
     height: 100vh
     &_wrapper
         padding-top: 240px 
-        width: 800px
+        width: 85%
         margin: 0 auto
     hr
-        width: 630px
+        width: 50%
         border: 1px solid #FFFFFF
         margin: 0 auto
     h1
@@ -23,7 +23,7 @@
         color: #FFFFFF
         font-weight: 400
         font-size: 16px
-        width: 630px
+        width: 50%
         text-align: center
         margin: 40px auto 20px auto
     .welcomeSectionBtnWrapper
@@ -41,3 +41,57 @@
             &:hover
                 background-color: rgba(255, 238, 50, 0.3)
                 border: 2px solid #FFEE32
+
+@media ( min-width:1025px) and ( max-width:1400px)
+
+    .welcomeSection
+        hr
+            width: 60%
+        h3
+            width: 95%
+        .welcomeSectionBtnWrapper
+            margin: 80px auto 0 auto !important
+
+@media ( min-width:769px) and ( max-width:1024px)
+
+    .welcomeSection
+        hr
+            width: 100%
+        h1
+            font-size: 37px
+        h3
+            width: 95%
+        .welcomeSectionBtnWrapper
+            margin: 80px auto 0 auto !important
+
+
+@media ( min-width:481px) and ( max-width:768px)
+    .welcomeSection
+        hr
+            width: 100%
+        h1
+            font-size: 37px
+        h3
+            width: 95%
+            background: rgba(0, 0, 0, 0.5)
+            backdrop-filter: blur(20px)
+            border-radius: 10px
+            padding: 5px
+            font-size: 15px
+        .welcomeSectionBtnWrapper
+            margin: 80px auto 0 auto !important
+
+@media ( min-width:320px) and ( max-width:480px)
+    .welcomeSection 
+        hr
+            width: 100%
+        h1
+            font-size: 24px
+        h3
+            width: 100%
+            background: rgba(0, 0, 0, 0.5)
+            backdrop-filter: blur(20px)
+            border-radius: 10px
+            padding: 5px
+    .welcomeSectionBtnWrapper
+        margin: 80px auto 0 auto !important

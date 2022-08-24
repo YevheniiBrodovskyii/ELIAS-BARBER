@@ -6,7 +6,7 @@
     h3
         padding: 80px 0 60px 0
         text-align: center
-        font-weight: 500
+        font-weight: 700
         font-size: 28px
     &_wrapper
         display: grid
@@ -17,16 +17,14 @@
     &_imgWrapper
         position: absolute
         width: 360px
-        height: 360px
         border-radius: 10px
     &_img
         border-radius: 10px
     &_item
         margin: 0 auto
         width: 360px
-        height: 360px
         &:hover
-            .courses_imgWrapper
+            .courses_img
                 outline: 1px solid #FFEE32
             h4
                 color: #FFEE32
@@ -114,4 +112,83 @@
             background-color: unset
             transition: 0.3s all
             &:hover
-                background-color: rgba(255, 238, 50, 0.3)    
+                background-color: rgba(255, 238, 50, 0.3)  
+
+@media ( min-width:1025px) and ( max-width:1400px)
+
+    .courses
+        h3
+            padding: 50px 0
+        &_wrapper
+            grid-template: auto/ 1fr 1fr
+            padding-bottom: 50px
+
+@media ( min-width:769px) and ( max-width:1024px)
+
+    .courses
+        h3
+            padding: 50px 0
+        &_wrapper
+            grid-template: auto/ 1fr
+
+
+@media ( min-width:481px) and ( max-width:768px)
+
+    .courses
+        h3
+            padding: 50px 0
+        &_wrapper
+            grid-template: auto/ 1fr
+        &_item
+            h4
+               top: -270px
+            &-btn
+                top: -230px
+        &_overlay
+            overflow-y: scroll
+        &_modal
+            margin: 100px auto 0 auto
+            width: calc( 90% - 40px )
+            height: unset
+            padding: 20px
+            &_title
+                font-size: 20px
+            &_descr
+                font-size: 15px
+            &_ul
+                li
+                    font-size: 15px
+
+@media ( min-width:320px) and ( max-width:480px)
+
+    .courses
+        h3
+            padding: 50px 0
+        &_wrapper
+            grid-template: auto/ 1fr
+        &_imgWrapper
+            width: 95%
+        &_item
+            width: 100%
+            h4
+               top: -200px
+               font-size: 19px 
+            &-btn
+                top: -160px
+        &_img
+            width: 100%
+        &_overlay
+            overflow-y: scroll
+        &_modal
+            margin: 100px auto 0 auto
+            width: calc( 90% - 40px )
+            height: unset
+            padding: 20px
+            &_title
+                font-size: 20px
+            &_descr
+                font-size: 15px
+            &_ul
+                li
+                    font-size: 15px
+                

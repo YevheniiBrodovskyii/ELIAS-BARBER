@@ -6,13 +6,12 @@
     &_title
         text-align: center
         color: #000000
-        font-weight: 500
+        font-weight: 700
         font-size: 28px
         padding: 80px 0 60px 0
     &_wrapper
         display: flex
         justify-content: space-between
-        margin: 0 120px
     &_img
         outline: 10px solid rgba(255, 238, 50, 0.5)
         outline-offset: -25px
@@ -54,6 +53,7 @@
         background-repeat: no-repeat
         background-position: center
         background-size: cover   
+        overflow-y: scroll
         &_show
             display: block
     &_modal
@@ -61,7 +61,6 @@
         background: rgba(0, 0, 0, 0.65)
         backdrop-filter: blur(20px)
         width: calc(90% - 80px)
-        height: calc(90% - 260px)
         margin: 140px auto 0 auto
         &_title
             text-align: center
@@ -95,6 +94,8 @@
             margin-top: 100px
         &_content
             margin-top: 40px
+            &-mobile
+                display: none
         &_descr
             text-align: left
             font-weight: 500
@@ -146,3 +147,229 @@
             transition: 0.3s all
             &:hover
                 background-color: rgba(255, 238, 50, 0.3)
+
+@media ( min-width:1401px) and ( max-width:1600px)
+
+    .coursesDetail
+        &_wrapper
+            margin: 0
+        &_item
+            width: 550px
+            height: 380px
+        &_img
+            width: 550px
+            height: 380px
+            object-fit: cover
+
+@media ( min-width:1025px) and ( max-width:1400px)
+
+    .coursesDetail
+        &_title
+            padding: 0px 0 60px 0
+        &_wrapper
+            margin: 0
+        &_item
+            width: 420px
+            height: 380px
+        &_img
+            width: 420px
+            height: 380px
+            object-fit: cover
+        &_subtitle
+            font-size: 24px
+        &_modal
+            &_secondWrapper
+                display: block
+            &_item
+                width: 352px
+                margin: 0 auto
+            &_content
+                width: 100%
+                &-2
+                    display: none
+                &-mobile
+                    display: block
+            &_descr
+                margin: 50px 0 50px 0
+                font-size: 23px
+            &_btnWrapper2
+                margin: 50px auto 0 auto
+                width: 377px
+            &_raiderBtn
+                margin: 80px 0 0 0
+                font-size: 18px
+            &_raiderDescr
+                font-size: 13px
+                &:first-child
+                    margin-top: 30px
+            &_subtitle
+                padding: 30px 0 40px 40px
+            &_raiderBackBtnWrapper
+                margin: 10px auto 0 auto
+
+@media ( min-width:769px) and ( max-width:1024px)
+
+    .coursesDetail
+        &_wrapper
+            margin: 0
+            display: block
+        &_item
+            height: 400px
+        &_img
+            width: 100%
+            height: 380px
+            object-fit: cover
+        &_overlay
+            overflow-y: scroll
+        &_modal
+            margin: 100px auto 0 auto
+            width: calc( 90% - 40px )
+            height: unset
+            padding: 20px
+            &_item
+                width: 352px
+                margin: 0 auto
+            &_title
+                font-size: 20px
+            &_wrapper
+                grid-template: auto / 100%
+            &_content
+                width: 100%
+                &-2
+                    display: none
+                &-mobile
+                    display: block
+            &_descr
+                margin: 50px 0 
+                text-align: center
+                font-size: 20px
+            &_btnWrapper2
+                margin: 50px auto 0 auto
+                width: 377px    
+            &_info
+                font-size: 15px
+                text-align: center
+            &_moreIcon
+                width: 25px
+            &_raiderBtn
+                font-size: 18px
+                line-height: 25px
+            &_subtitle
+                padding: 20px 0
+                font-size: 15px
+                text-align: center
+            &_raiderDescr
+                font-size: 12px
+            &_secondWrapper
+                display: block
+
+@media ( min-width:481px) and ( max-width:768px)
+
+    .coursesDetail
+        &_wrapper
+            margin: 0
+            display: block
+        &_item
+            height: 400px
+        &_img
+            width: 100%
+            height: 380px
+            object-fit: cover
+        &_overlay
+            overflow-y: scroll
+        &_modal
+            margin: 100px auto 0 auto
+            width: calc( 90% - 40px )
+            height: unset
+            padding: 20px
+            &_item
+                width: 352px
+                margin: 0 auto
+            &_title
+                font-size: 20px
+            &_wrapper
+                grid-template: auto / 100%
+            &_content
+                width: 100%
+                &-2
+                    display: none
+                &-mobile
+                    display: block
+            &_descr
+                margin: 50px 0 
+                text-align: center
+                font-size: 20px
+            &_info
+                font-size: 15px
+            &_moreIcon
+                width: 25px
+            &_btnWrapper2
+                margin: 50px auto 0 auto
+                width: 377px       
+            &_raiderBtn
+                font-size: 18px
+                line-height: 25px
+            &_subtitle
+                padding: 20px 0
+                font-size: 15px
+            &_raiderDescr
+                font-size: 12px
+            &_secondWrapper
+                display: block
+
+@media ( min-width:320px) and ( max-width:480px)
+
+    .coursesDetail
+        &_wrapper
+            margin: 0
+            display: block
+        &_item
+            height: 400px
+        &_img
+            width: 100%
+            height: 380px
+            object-fit: cover
+        &_subtitle
+            font-size: 23px
+        &_overlay
+            overflow-y: scroll
+        &_modal
+            margin: 100px auto 0 auto
+            width: calc( 90% - 40px )
+            height: unset
+            padding: 20px
+            &_item
+                width: 255px
+                margin: 0 auto
+            &_title
+                font-size: 20px
+            &_wrapper
+                grid-template: auto / 100%
+            &_content
+                width: 100%
+                &-2
+                    display: none
+                &-mobile
+                    display: block
+                    width: 255px
+            &_descr
+                margin: 50px 0 
+                text-align: center
+                font-size: 20px
+            &_info
+                font-size: 15px
+            &_moreIcon
+                width: 20px
+            &_btnWrapper2
+                margin: 0px auto 0 auto
+                width: 248px 
+            &_raiderBtn
+                font-size: 11px
+                line-height: 25px
+            &_subtitle
+                padding: 20px 0
+                font-size: 15px
+            &_raiderDescr
+                font-size: 12px
+            &_secondWrapper
+                display: block
