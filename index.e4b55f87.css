@@ -772,7 +772,6 @@ nav a {
   position: fixed;
   top: 0;
   bottom: 0;
-  overflow-y: scroll;
 }
 
 .coursesDetail_overlay_show {
