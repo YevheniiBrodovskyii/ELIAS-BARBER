@@ -536,16 +536,20 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _jquery = require("jquery");
 var _jqueryDefault = parcelHelpers.interopDefault(_jquery);
 var _animatedScroll = require("./js/animatedScroll");
+var _header = require("./js/header");
 var _ourTeam = require("./js/ourTeam");
 var _courses = require("./js/courses");
 var _coursesDetail = require("./js/coursesDetail");
 var _contactUs = require("./js/contactUs");
+var _carousel = require("./js/carousel");
 (0, _jqueryDefault.default)(function() {
     let closeMasterDetails = document.querySelectorAll(".coursesDetail_modal_btn");
     // ANIMATED SCROLL
     (0, _animatedScroll.animatedScroll)();
+    // HEADER FUNCTIONS
+    (0, _header.openLanguage)(".header_language");
     // OPEN BARBER INFO
-    (0, _ourTeam.aboutBarberOpen)(".ourTeam_item");
+    (0, _ourTeam.aboutBarberOpen)(".ourTeam_button");
     (0, _ourTeam.aboutBarberClose)(".ourTeam_modal_btn");
     // OPEN MASTER DESCRIPTION
     (0, _coursesDetail.aboutOpenMaster)("#openMasterBtn");
@@ -561,9 +565,10 @@ var _contactUs = require("./js/contactUs");
     //OPEN PRIVACY MODAL
     (0, _contactUs.privacyOpen)(".contactUs_privacy");
     (0, _contactUs.privacyClose)(".contactUs_modal_btn");
+    new (0, _carousel.Ant)(".carousel");
 });
 
-},{"jquery":"hgMhh","./js/animatedScroll":"fkeOf","./js/ourTeam":"adcsT","./js/courses":"dKvZw","./js/coursesDetail":"aRx2w","./js/contactUs":"jlFpx","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hgMhh":[function(require,module,exports) {
+},{"jquery":"hgMhh","./js/animatedScroll":"fkeOf","./js/ourTeam":"adcsT","./js/courses":"dKvZw","./js/coursesDetail":"aRx2w","./js/contactUs":"jlFpx","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./js/carousel":"2DotB","./js/header":"bvS82"}],"hgMhh":[function(require,module,exports) {
 /*!
  * jQuery JavaScript Library v3.6.0
  * https://jquery.com/
@@ -7517,6 +7522,254 @@ function privacyClose(item) {
             (0, _jqueryDefault.default)(".contactUs_overlay").removeClass("contactUs_overlay_show");
             (0, _jqueryDefault.default)(".contactUs_overlay").removeClass("b-show");
         });
+    });
+}
+
+},{"jquery":"hgMhh","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2DotB":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Ant", ()=>Ant);
+class Ant {
+    constructor(crslId){
+        let id = document.getElementById(crslId);
+        if (id) this.crslRoot = id;
+        else this.crslRoot = document.querySelector(".carousel");
+        // Carousel objects
+        this.crslList = this.crslRoot.querySelector(".ourTeam_wrapper");
+        this.crslElements = this.crslList.querySelectorAll(".ourTeam_item");
+        this.crslElemFirst = this.crslList.querySelector(".ourTeam_item");
+        this.leftArrow = this.crslRoot.querySelector(".ourTeam_arrow-left");
+        this.rightArrow = this.crslRoot.querySelector(".ourTeam_arrow-right");
+        // Initialization
+        this.options = Ant.defaults;
+        Ant.initialize(this);
+    }
+    static initialize(that) {
+        // Constants
+        that.elemCount = that.crslElements.length; // Количество элементов
+        that.dotsVisible = that.elemCount; // Число видимых точек
+        let elemStyle = window.getComputedStyle(that.crslElemFirst);
+        that.elemWidth = that.crslElemFirst.offsetWidth + parseInt(elemStyle.marginLeft) + parseInt(elemStyle.marginRight);
+        // Variables
+        that.currentElement = 0;
+        that.currentOffset = 0;
+        that.touchPrev = true;
+        that.touchNext = true;
+        let xTouch, yTouch, xDiff, yDiff, stTime, mvTime;
+        let bgTime = getTime();
+        // Functions
+        function getTime() {
+            return new Date().getTime();
+        }
+        function setAutoScroll() {
+            that.autoScroll = setInterval(function() {
+                let fnTime = getTime();
+                if (fnTime - bgTime + 10 > that.options.interval) {
+                    bgTime = fnTime;
+                    that.elemNext();
+                }
+            }, that.options.interval);
+        }
+        // Start initialization
+        if (that.elemCount <= that.options.elemVisible) {
+            // Отключить навигацию
+            that.options.auto = false;
+            that.options.touch = false;
+            that.options.arrows = false;
+            that.options.dots = false;
+            that.leftArrow.style.visibility = "hidden";
+            that.rightArrow.style.visibility = "hidden";
+        }
+        if (!that.options.loop) {
+            // если нет цикла - уточнить количество точек
+            that.dotsVisible = that.elemCount - that.options.elemVisible + 1;
+            that.leftArrow.style.visibility = "hidden"; // отключить левую стрелку
+            that.touchPrev = false; // отключить прокрутку прикосновением вправо
+            that.options.auto = false; // отключить автопркрутку
+        } else if (that.options.auto) {
+            // инициализация автопрокруки
+            setAutoScroll();
+            // Остановка прокрутки при наведении мыши на элемент
+            that.crslList.addEventListener("mouseenter", function() {
+                clearInterval(that.autoScroll);
+            }, false);
+            that.crslList.addEventListener("mouseleave", setAutoScroll, false);
+        }
+        if (that.options.touch) {
+            // инициализация прокрутки прикосновением
+            that.crslList.addEventListener("touchstart", function(e) {
+                xTouch = parseInt(e.touches[0].clientX);
+                yTouch = parseInt(e.touches[0].clientY);
+                stTime = getTime();
+            }, false);
+            that.crslList.addEventListener("touchmove", function(e) {
+                if (!xTouch || !yTouch) return;
+                xDiff = xTouch - parseInt(e.touches[0].clientX);
+                yDiff = yTouch - parseInt(e.touches[0].clientY);
+                mvTime = getTime();
+                if (Math.abs(xDiff) > 15 && Math.abs(xDiff) > Math.abs(yDiff) && mvTime - stTime < 75) {
+                    stTime = 0;
+                    if (that.touchNext && xDiff > 0) {
+                        bgTime = mvTime;
+                        that.elemNext();
+                    } else if (that.touchPrev && xDiff < 0) {
+                        bgTime = mvTime;
+                        that.elemPrev();
+                    }
+                }
+            }, false);
+        }
+        if (that.options.arrows) {
+            // инициализация стрелок
+            if (!that.options.loop) that.crslList.style.cssText = "transition:margin " + that.options.speed + "ms ease;";
+            that.leftArrow.addEventListener("click", function() {
+                let fnTime = getTime();
+                if (fnTime - bgTime > that.options.speed) {
+                    bgTime = fnTime;
+                    that.elemPrev();
+                }
+            }, false);
+            that.rightArrow.addEventListener("click", function() {
+                let fnTime = getTime();
+                if (fnTime - bgTime > that.options.speed) {
+                    bgTime = fnTime;
+                    that.elemNext();
+                }
+            }, false);
+        } else {
+            that.leftArrow.style.visibility = "hidden";
+            that.rightArrow.style.visibility = "hidden";
+        }
+        if (that.options.dots) {
+            // инициализация индикаторных точек
+            let sum = "", diffNum;
+            for(let i = 0; i < that.dotsVisible; i++)sum += '<span class="ant-dot"></span>';
+            that.indicatorDots.innerHTML = sum;
+            that.indicatorDotsAll = that.crslRoot.querySelectorAll("span.ant-dot");
+            // Назначаем точкам обработчик события 'click'
+            for(let n = 0; n < that.dotsVisible; n++)that.indicatorDotsAll[n].addEventListener("click", function() {
+                diffNum = Math.abs(n - that.currentElement);
+                if (n < that.currentElement) {
+                    bgTime = getTime();
+                    that.elemPrev(diffNum);
+                } else if (n > that.currentElement) {
+                    bgTime = getTime();
+                    that.elemNext(diffNum);
+                }
+            // Если n == that.currentElement ничего не делаем
+            }, false);
+            that.dotOff(0); // точка[0] выключена, остальные включены
+            for(let i1 = 1; i1 < that.dotsVisible; i1++)that.dotOn(i1);
+        }
+    }
+    elemPrev(num) {
+        num = num || 1;
+        if (this.options.dots) this.dotOn(this.currentElement);
+        this.currentElement -= num;
+        if (this.currentElement < 0) this.currentElement = this.dotsVisible - 1;
+        if (this.options.dots) this.dotOff(this.currentElement);
+        if (!this.options.loop) {
+            // сдвиг вправо без цикла
+            this.currentOffset += this.elemWidth * num;
+            this.crslList.style.marginLeft = this.currentOffset + "px";
+            if (this.currentElement == 0) {
+                this.leftArrow.style.visibility = "hidden";
+                this.touchPrev = false;
+            }
+            this.rightArrow.style.visibility = "visible";
+            this.touchNext = true;
+        } else {
+            // сдвиг вправо с циклом
+            let elm, buf, this$ = this;
+            for(let i = 0; i < num; i++){
+                elm = this.crslList.lastElementChild;
+                buf = elm.cloneNode(true);
+                this.crslList.insertBefore(buf, this.crslList.firstElementChild);
+                this.crslList.removeChild(elm);
+            }
+            this.crslList.style.marginLeft = "-" + this.elemWidth * num + "px";
+            let compStyle = window.getComputedStyle(this.crslList).marginLeft;
+            this.crslList.style.cssText = "transition:margin " + this.options.speed + "ms ease;";
+            this.crslList.style.marginLeft = "0px";
+            setTimeout(function() {
+                this$.crslList.style.cssText = "transition:none;";
+            }, this.options.speed);
+        }
+    }
+    elemNext(num) {
+        num = num || 1;
+        if (this.options.dots) this.dotOn(this.currentElement);
+        this.currentElement += num;
+        if (this.currentElement >= this.dotsVisible) this.currentElement = 0;
+        if (this.options.dots) this.dotOff(this.currentElement);
+        if (!this.options.loop) {
+            // сдвиг влево без цикла
+            this.currentOffset -= this.elemWidth * num;
+            this.crslList.style.marginLeft = this.currentOffset + "px";
+            if (this.currentElement == this.dotsVisible - 1) {
+                this.rightArrow.style.visibility = "hidden";
+                this.touchNext = false;
+            }
+            this.leftArrow.style.visibility = "visible";
+            this.touchPrev = true;
+        } else {
+            // сдвиг влево с циклом
+            let elm, buf, this$ = this;
+            this.crslList.style.cssText = "transition:margin " + this.options.speed + "ms ease;";
+            this.crslList.style.marginLeft = "-" + this.elemWidth * num + "px";
+            setTimeout(function() {
+                this$.crslList.style.cssText = "transition:none;";
+                for(let i = 0; i < num; i++){
+                    elm = this$.crslList.firstElementChild;
+                    buf = elm.cloneNode(true);
+                    this$.crslList.appendChild(buf);
+                    this$.crslList.removeChild(elm);
+                }
+                this$.crslList.style.marginLeft = "0px";
+            }, this.options.speed);
+        }
+    }
+    dotOn(num) {
+        this.indicatorDotsAll[num].style.cssText = "background-color:#BBB; cursor:pointer;";
+    }
+    dotOff(num) {
+        this.indicatorDotsAll[num].style.cssText = "background-color:#556; cursor:default;";
+    }
+}
+Ant.defaults = {
+    // Default options for the carousel
+    elemVisible: 3,
+    loop: false,
+    auto: true,
+    interval: 3000,
+    speed: 750,
+    touch: true,
+    arrows: true,
+    dots: false
+};
+new Ant();
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bvS82":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "openLanguage", ()=>openLanguage);
+var _jquery = require("jquery");
+var _jqueryDefault = parcelHelpers.interopDefault(_jquery);
+function openLanguage() {
+    let language = document.querySelector(".header_language"), wrapper = document.querySelector(".header_language_wrapper"), languageOpen = document.querySelector(".header_language-open"), svg = document.querySelector(".header_language > svg > path"), svg2 = document.querySelector(".language_open-svg");
+    language.addEventListener("click", function() {
+        wrapper.style.display = "block";
+        languageOpen.style.visibility = "visible";
+        languageOpen.style.transform = "translate(0px, 0px)";
+        svg.style.display = "none";
+        svg2.style.display = "block";
+    });
+    wrapper.addEventListener("click", function() {
+        wrapper.style.display = "none";
+        languageOpen.style.visibility = "hidden";
+        languageOpen.style.transform = "translate(0px, -47px)";
+        svg.style.display = "block";
+        svg2.style.display = "none";
     });
 }
 

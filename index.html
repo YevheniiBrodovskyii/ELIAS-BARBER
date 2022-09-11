@@ -18,14 +18,46 @@
     <title>ELIAS BARBER</title>
   </head>
   <body>
-    <header id="menu">
+    <header class="header" id="menu">
       <img src="./ELIAS%20logo.033306fe.svg" alt="logo" />
       <nav>
         <a href="#ourTeam">О нас</a>
         <a href="#courses">Обучающие программы</a>
         <a href="#contactUs">Контакты</a>
       </nav>
-      <a class="header_btn" href="#courses">Выбрать курс</a>
+      <div class="header_wrapper">
+        <a class="header_btn" href="#courses">Выбрать курс</a>
+        <div class="header_language_wrapper"></div>
+        <div class="header_language">
+          RU
+          <svg
+            width="14"
+            height="9"
+            viewbox="0 0 14 9"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7 7L6.29289 7.70711L7 8.41421L7.70711 7.70711L7 7ZM0.292893 1.70711L6.29289 7.70711L7.70711 6.29289L1.70711 0.292893L0.292893 1.70711ZM7.70711 7.70711L13.7071 1.70711L12.2929 0.292893L6.29289 6.29289L7.70711 7.70711Z"
+              fill="#FFEE32"
+            ></path>
+          </svg>
+        </div>
+        <div class="header_language-open">EN</div>
+        <svg
+          class="language_open-svg"
+          width="14"
+          height="9"
+          viewbox="0 0 14 9"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M7 2L7.70711 1.29289L7 0.585786L6.29289 1.29289L7 2ZM13.7071 7.29289L7.70711 1.29289L6.29289 2.70711L12.2929 8.70711L13.7071 7.29289ZM6.29289 1.29289L0.292893 7.29289L1.70711 8.70711L7.70711 2.70711L6.29289 1.29289Z"
+            fill="#FFEE32"
+          ></path>
+        </svg>
+      </div>
     </header>
     <section class="welcomeSection">
       <div class="container">
@@ -46,141 +78,272 @@
     </section>
     <section class="ourTeam" id="ourTeam">
       <div class="container">
-        <h2>EDUCATORS</h2>
-        <div class="ourTeam_wrapper">
-          <div class="ourTeam_item">
-            <div class="ourTeam_imgWrapper">
-              <img
-                class="ourTeam_img"
-                src="./IMG_8494%201.81378358.png"
-                alt="barber_img"
-              />
-            </div>
-            <h4 class="ourTeam_name">Юрий Дыкун</h4>
-          </div>
-          <div class="ourTeam_overlay">
-            <div class="ourTeam_modal">
-              <h3 class="ourTeam_modal_title">Юрий<span>Дыкун</span></h3>
-              <div class="ourTeam_modal_wrapper">
-                <div class="ourTeam_modal_item">
-                  <div class="ourTeam_modal_photoWrapper">
-                    <img
-                      class="ourTeam_modal_photo"
-                      src="./ilya_samoliuk.de1e738e.png"
-                      alt="ourTeam_photo"
-                    />
+        <h2>Educators</h2>
+        <div class="carousel">
+          <img
+            class="ourTeam_arrow ourTeam_arrow-left"
+            src="./ourTeam_left.1f4dc576.svg"
+            alt="arrow"
+          />
+          <img
+            class="ourTeam_arrow ourTeam_arrow-right"
+            src="./ourTeam_right.86f14af6.svg"
+            alt="arrow"
+          />
+          <div class="ourTeam_hider">
+            <div class="ourTeam_wrapper">
+              <div class="ourTeam_item">
+                <img
+                  class="ourTeam_img"
+                  src="./IMG_8494%201.81378358.png"
+                  alt="barber_img"
+                />
+                <div class="ourTeam_bottomWrapper">
+                  <h4 class="ourTeam_name">Юрий <span>Дыкун</span></h4>
+                  <div class="ourTeam_buttonWrapper">
+                    <button class="ourTeam_button">Подробнее</button>
                   </div>
                 </div>
-                <div class="ourTeam_modal_item">
-                  <p class="ourTeam_modal_descr">
-                    В профессии уже 8 лет. Первый барбер города Винница. Один из
-                    первых барьеров в сети барбершопов «Gentelmens Club»
-                    Запустил 5 барбершопов 2 из которых свои
-                    <span>@excellent_barbershop</span> . Обучает свыше 6 лет 2
-                    из которых в личной академии
-                    <span>@excellent_academy</span>.
-                  </p>
-                  <img
-                    class="ourTeam_modal_icon"
-                    src="./Instagram.59975b75.png"
-                    alt="ourTeam_instagram"
-                  />
-                  <h4 class="ourTeam_modal_instagram">eliasbarber.education</h4>
-                </div>
               </div>
-            </div>
-            <div class="ourTeam_modal_btnWrapper">
-              <button class="ourTeam_modal_btn">Главная страница</button>
-            </div>
-          </div>
-          <div class="ourTeam_item">
-            <div class="ourTeam_imgWrapper">
-              <img
-                class="ourTeam_img"
-                src="./IMG_8494%201.81378358.png"
-                alt="barber_img"
-              />
-            </div>
-            <h4 class="ourTeam_name">Илья Самойлюк</h4>
-          </div>
-          <div class="ourTeam_overlay">
-            <div class="ourTeam_modal">
-              <h3 class="ourTeam_modal_title">Илья<span>Самойлюк</span></h3>
-              <div class="ourTeam_modal_wrapper">
-                <div class="ourTeam_modal_item">
-                  <div class="ourTeam_modal_photoWrapper">
-                    <img
-                      class="ourTeam_modal_photo"
-                      src="./ilya_samoliuk.de1e738e.png"
-                      alt="ourTeam_photo"
-                    />
+              <div class="ourTeam_overlay">
+                <div class="ourTeam_modal">
+                  <h3 class="ourTeam_modal_title">Юрий<span>Дыкун</span></h3>
+                  <div class="ourTeam_modal_wrapper">
+                    <div class="ourTeam_modal_item">
+                      <div class="ourTeam_modal_photoWrapper">
+                        <img
+                          class="ourTeam_modal_photo"
+                          src="./ilya_samoliuk.de1e738e.png"
+                          alt="ourTeam_photo"
+                        />
+                      </div>
+                    </div>
+                    <div class="ourTeam_modal_item">
+                      <p class="ourTeam_modal_descr">
+                        В профессии уже 8 лет. Первый барбер города Винница.
+                        Один из первых барьеров в сети барбершопов «Gentelmens
+                        Club» Запустил 5 барбершопов 2 из которых свои
+                        <span>@excellent_barbershop</span> . Обучает свыше 6 лет
+                        2 из которых в личной академии
+                        <span>@excellent_academy</span>.
+                      </p>
+                      <img
+                        class="ourTeam_modal_icon"
+                        src="./Instagram.59975b75.png"
+                        alt="ourTeam_instagram"
+                      />
+                      <h4 class="ourTeam_modal_instagram">
+                        eliasbarber.education
+                      </h4>
+                    </div>
                   </div>
                 </div>
-                <div class="ourTeam_modal_item">
-                  <p class="ourTeam_modal_descr">
-                    В профессии уже 8 лет. Первый барбер города Винница. Один из
-                    первых барьеров в сети барбершопов «Gentelmens Club»
-                    Запустил 5 барбершопов 2 из которых свои
-                    <span>@excellent_barbershop</span> . Обучает свыше 6 лет 2
-                    из которых в личной академии
-                    <span>@excellent_academy</span>.
-                  </p>
-                  <img
-                    class="ourTeam_modal_icon"
-                    src="./Instagram.59975b75.png"
-                    alt="ourTeam_instagram"
-                  />
-                  <h4 class="ourTeam_modal_instagram">eliasbarber.education</h4>
+                <div class="ourTeam_modal_btnWrapper">
+                  <button class="ourTeam_modal_btn">Главная страница</button>
                 </div>
               </div>
-            </div>
-            <div class="ourTeam_modal_btnWrapper">
-              <button class="ourTeam_modal_btn">Главная страница</button>
-            </div>
-          </div>
-          <div class="ourTeam_item">
-            <div class="ourTeam_imgWrapper">
-              <img
-                class="ourTeam_img"
-                src="./IMG_8494%201.81378358.png"
-                alt="barber_img"
-              />
-            </div>
-            <h4 class="ourTeam_name">Максим Лысенко</h4>
-          </div>
-          <div class="ourTeam_overlay">
-            <div class="ourTeam_modal">
-              <h3 class="ourTeam_modal_title">Максим<span>Лысенко</span></h3>
-              <div class="ourTeam_modal_wrapper">
-                <div class="ourTeam_modal_item">
-                  <div class="ourTeam_modal_photoWrapper">
-                    <img
-                      class="ourTeam_modal_photo"
-                      src="./ilya_samoliuk.de1e738e.png"
-                      alt="ourTeam_photo"
-                    />
+              <div class="ourTeam_item">
+                <img
+                  class="ourTeam_img"
+                  src="./IMG_8494%201.81378358.png"
+                  alt="barber_img"
+                />
+                <div class="ourTeam_bottomWrapper">
+                  <h4 class="ourTeam_name">Илья <span>Самойлюк</span></h4>
+                  <div class="ourTeam_buttonWrapper">
+                    <button class="ourTeam_button">Подробнее</button>
                   </div>
                 </div>
-                <div class="ourTeam_modal_item">
-                  <p class="ourTeam_modal_descr">
-                    В профессии уже 8 лет. Первый барбер города Винница. Один из
-                    первых барьеров в сети барбершопов «Gentelmens Club»
-                    Запустил 5 барбершопов 2 из которых свои
-                    <span>@excellent_barbershop</span> . Обучает свыше 6 лет 2
-                    из которых в личной академии
-                    <span>@excellent_academy</span>.
-                  </p>
-                  <img
-                    class="ourTeam_modal_icon"
-                    src="./Instagram.59975b75.png"
-                    alt="ourTeam_instagram"
-                  />
-                  <h4 class="ourTeam_modal_instagram">eliasbarber.education</h4>
+              </div>
+              <div class="ourTeam_overlay">
+                <div class="ourTeam_modal">
+                  <h3 class="ourTeam_modal_title">Илья<span>Самойлюк</span></h3>
+                  <div class="ourTeam_modal_wrapper">
+                    <div class="ourTeam_modal_item">
+                      <div class="ourTeam_modal_photoWrapper">
+                        <img
+                          class="ourTeam_modal_photo"
+                          src="./ilya_samoliuk.de1e738e.png"
+                          alt="ourTeam_photo"
+                        />
+                      </div>
+                    </div>
+                    <div class="ourTeam_modal_item">
+                      <p class="ourTeam_modal_descr">
+                        В профессии уже 8 лет. Первый барбер города Винница.
+                        Один из первых барьеров в сети барбершопов «Gentelmens
+                        Club» Запустил 5 барбершопов 2 из которых свои
+                        <span>@excellent_barbershop</span> . Обучает свыше 6 лет
+                        2 из которых в личной академии
+                        <span>@excellent_academy</span>.
+                      </p>
+                      <img
+                        class="ourTeam_modal_icon"
+                        src="./Instagram.59975b75.png"
+                        alt="ourTeam_instagram"
+                      />
+                      <h4 class="ourTeam_modal_instagram">
+                        eliasbarber.education
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="ourTeam_modal_btnWrapper">
+                  <button class="ourTeam_modal_btn">Главная страница</button>
                 </div>
               </div>
-            </div>
-            <div class="ourTeam_modal_btnWrapper">
-              <button class="ourTeam_modal_btn">Главная страница</button>
+              <div class="ourTeam_item">
+                <img
+                  class="ourTeam_img"
+                  src="./IMG_8494%201.81378358.png"
+                  alt="barber_img"
+                />
+                <div class="ourTeam_bottomWrapper">
+                  <h4 class="ourTeam_name">Максим <span>Лысенко</span></h4>
+                  <div class="ourTeam_buttonWrapper">
+                    <button class="ourTeam_button">Подробнее</button>
+                  </div>
+                </div>
+              </div>
+              <div class="ourTeam_overlay">
+                <div class="ourTeam_modal">
+                  <h3 class="ourTeam_modal_title">
+                    Максим<span>Лысенко</span>
+                  </h3>
+                  <div class="ourTeam_modal_wrapper">
+                    <div class="ourTeam_modal_item">
+                      <div class="ourTeam_modal_photoWrapper">
+                        <img
+                          class="ourTeam_modal_photo"
+                          src="./ilya_samoliuk.de1e738e.png"
+                          alt="ourTeam_photo"
+                        />
+                      </div>
+                    </div>
+                    <div class="ourTeam_modal_item">
+                      <p class="ourTeam_modal_descr">
+                        В профессии уже 8 лет. Первый барбер города Винница.
+                        Один из первых барьеров в сети барбершопов «Gentelmens
+                        Club» Запустил 5 барбершопов 2 из которых свои
+                        <span>@excellent_barbershop</span> . Обучает свыше 6 лет
+                        2 из которых в личной академии
+                        <span>@excellent_academy</span>.
+                      </p>
+                      <img
+                        class="ourTeam_modal_icon"
+                        src="./Instagram.59975b75.png"
+                        alt="ourTeam_instagram"
+                      />
+                      <h4 class="ourTeam_modal_instagram">
+                        eliasbarber.education
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="ourTeam_modal_btnWrapper">
+                  <button class="ourTeam_modal_btn">Главная страница</button>
+                </div>
+              </div>
+              <div class="ourTeam_item">
+                <img
+                  class="ourTeam_img"
+                  src="./IMG_8494%201.81378358.png"
+                  alt="barber_img"
+                />
+                <div class="ourTeam_bottomWrapper">
+                  <h4 class="ourTeam_name">New <span>Barber</span></h4>
+                  <div class="ourTeam_buttonWrapper">
+                    <button class="ourTeam_button">Подробнее</button>
+                  </div>
+                </div>
+              </div>
+              <div class="ourTeam_overlay">
+                <div class="ourTeam_modal">
+                  <h3 class="ourTeam_modal_title">New<span>Barber</span></h3>
+                  <div class="ourTeam_modal_wrapper">
+                    <div class="ourTeam_modal_item">
+                      <div class="ourTeam_modal_photoWrapper">
+                        <img
+                          class="ourTeam_modal_photo"
+                          src="./ilya_samoliuk.de1e738e.png"
+                          alt="ourTeam_photo"
+                        />
+                      </div>
+                    </div>
+                    <div class="ourTeam_modal_item">
+                      <p class="ourTeam_modal_descr">
+                        В профессии уже 8 лет. Первый барбер города Винница.
+                        Один из первых барьеров в сети барбершопов «Gentelmens
+                        Club» Запустил 5 барбершопов 2 из которых свои
+                        <span>@excellent_barbershop</span> . Обучает свыше 6 лет
+                        2 из которых в личной академии
+                        <span>@excellent_academy</span>.
+                      </p>
+                      <img
+                        class="ourTeam_modal_icon"
+                        src="./Instagram.59975b75.png"
+                        alt="ourTeam_instagram"
+                      />
+                      <h4 class="ourTeam_modal_instagram">
+                        eliasbarber.education
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="ourTeam_modal_btnWrapper">
+                  <button class="ourTeam_modal_btn">Главная страница</button>
+                </div>
+              </div>
+              <div class="ourTeam_item">
+                <img
+                  class="ourTeam_img"
+                  src="./IMG_8494%201.81378358.png"
+                  alt="barber_img"
+                />
+                <div class="ourTeam_bottomWrapper">
+                  <h4 class="ourTeam_name">New <span>Barber</span></h4>
+                  <div class="ourTeam_buttonWrapper">
+                    <button class="ourTeam_button">Подробнее</button>
+                  </div>
+                </div>
+              </div>
+              <div class="ourTeam_overlay">
+                <div class="ourTeam_modal">
+                  <h3 class="ourTeam_modal_title">New<span>Barber</span></h3>
+                  <div class="ourTeam_modal_wrapper">
+                    <div class="ourTeam_modal_item">
+                      <div class="ourTeam_modal_photoWrapper">
+                        <img
+                          class="ourTeam_modal_photo"
+                          src="./ilya_samoliuk.de1e738e.png"
+                          alt="ourTeam_photo"
+                        />
+                      </div>
+                    </div>
+                    <div class="ourTeam_modal_item">
+                      <p class="ourTeam_modal_descr">
+                        В профессии уже 8 лет. Первый барбер города Винница.
+                        Один из первых барьеров в сети барбершопов «Gentelmens
+                        Club» Запустил 5 барбершопов 2 из которых свои
+                        <span>@excellent_barbershop</span> . Обучает свыше 6 лет
+                        2 из которых в личной академии
+                        <span>@excellent_academy</span>.
+                      </p>
+                      <img
+                        class="ourTeam_modal_icon"
+                        src="./Instagram.59975b75.png"
+                        alt="ourTeam_instagram"
+                      />
+                      <h4 class="ourTeam_modal_instagram">
+                        eliasbarber.education
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="ourTeam_modal_btnWrapper">
+                  <button class="ourTeam_modal_btn">Главная страница</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
